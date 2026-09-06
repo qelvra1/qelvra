@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-09-05T22:07:04.158Z",
+  "dryRun": true,
+  "folders": [
+    {
+      "folder": "archetype",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "archetype.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "aurelia",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "aurelia.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "cripsyland",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "cripsyland.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "lumiere-haven",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "lumiere-haven.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "medicare",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "medicare.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "nexora",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "nexora.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "oak-blade",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "oak-blade.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "peak-performannce",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "peak-performannce.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "velocity",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "velocity.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    }
+  ]
+}
