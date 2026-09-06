@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { X, Check, ArrowLeft } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import GradientCTA from "./GradientCTA";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_PUBLIC_KEY,
+  EMAILJS_START_PROJECT_TEMPLATE_ID,
+} from "@/config/emailjs.config";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Init EmailJS once at module load — do NOT call init() again inside submit
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
-if (EMAILJS_PUBLIC_KEY) {
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-}
 
 const STEPS = [
   {
@@ -115,9 +114,9 @@ export default function EstimatorModal({ open, onClose }: EstimatorModalProps) {
 
     setStatus("sending");
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
-    const templateId = import.meta.env.VITE_EMAILJS_START_PROJECT_TEMPLATE_ID as string;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+    const serviceId = EMAILJS_SERVICE_ID;
+    const templateId = EMAILJS_START_PROJECT_TEMPLATE_ID;
+    const publicKey = EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
       const missingKeys = [
@@ -147,8 +146,8 @@ export default function EstimatorModal({ open, onClose }: EstimatorModalProps) {
     console.log("[EstimatorModal] Sending:", { serviceId, templateId, templateParams });
 
     try {
-      // Public key already initialised at module level — pass only 3 args
-      const res = await emailjs.send(serviceId, templateId, templateParams);
+      // Pass publicKey as 4th arg — no module-level init() needed
+      const res = await emailjs.send(serviceId, templateId, templateParams, publicKey);
       console.log("[EstimatorModal] EmailJS success:", res.status, res.text);
       setStatus("sent");
       closeTimerRef.current = window.setTimeout(() => {

@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { X, Check } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import GradientCTA from "./GradientCTA";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_LETS_TALK_TEMPLATE_ID,
+  EMAILJS_PUBLIC_KEY,
+} from "@/config/emailjs.config";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -74,21 +79,19 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
 
     setStatus("sending");
 
-    const serviceId =
-      (import.meta.env.VITE_EMAILJS_SERVICE_ID as string) ||
-      ((typeof process !== "undefined" && process.env?.NEXT_PUBLIC_EMAILJS_SERVICE_ID) as string) ||
-      "";
+    const serviceId = EMAILJS_SERVICE_ID;
+    const templateId = EMAILJS_LETS_TALK_TEMPLATE_ID;
+    const publicKey = EMAILJS_PUBLIC_KEY;
 
-    const templateId =
-      (import.meta.env.VITE_EMAILJS_LETS_TALK_TEMPLATE_ID as string) ||
-      (import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string) ||
-      ((typeof process !== "undefined" && process.env?.NEXT_PUBLIC_EMAILJS_LETS_TALK_TEMPLATE_ID) as string) ||
-      "";
-
-    const publicKey =
-      (import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string) ||
-      ((typeof process !== "undefined" && process.env?.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) as string) ||
-      "";
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS configuration:", {
+        serviceId: Boolean(serviceId),
+        templateId: Boolean(templateId),
+        publicKey: Boolean(publicKey),
+      });
+      setStatus("error");
+      return;
+    }
 
     const templateParams = {
       from_name: name,
@@ -105,16 +108,6 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
     };
 
     console.log("Submitting contact form data:", templateParams);
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("Missing EmailJS environment configuration:", {
-        serviceId: Boolean(serviceId),
-        templateId: Boolean(templateId),
-        publicKey: Boolean(publicKey),
-      });
-      setStatus("error");
-      return;
-    }
 
     try {
       const res = await emailjs.send(
@@ -134,6 +127,9 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
     } catch (err: any) {
       console.error("EmailJS Send Failed:", err?.text || err?.message || err);
       setStatus("error");
+    } finally {
+      // Guarantee the button is never left in the loading/sending state
+      setStatus((prev) => (prev === "sending" ? "error" : prev));
     }
   };
 
