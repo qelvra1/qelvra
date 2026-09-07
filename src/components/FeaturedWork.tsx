@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp, ExternalLink, Play } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import type { FilterKey, Project } from "../data";
 import { useProjects } from "../data/projectsStore";
 import { scrollToId } from "../lib/motion";
@@ -29,12 +29,10 @@ function Card({
   p,
   enterIndex,
   leaving,
-  onPreview,
 }: {
   p: Project;
   enterIndex?: number;
   leaving?: boolean;
-  onPreview: (project: Project) => void;
 }) {
   return (
     <article
@@ -43,32 +41,26 @@ function Card({
       }`}
       style={enterIndex !== undefined ? { animationDelay: `${enterIndex * 70}ms` } : undefined}
     >
-      {/* Thumbnail — clicking opens the in-page preview modal */}
-      <div
-        className="media"
-        role="button"
-        tabIndex={0}
-        aria-label={`Preview ${p.title}`}
-        onClick={() => onPreview(p)}
-        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onPreview(p)}
+      {/* Thumbnail — clicking opens live model in new tab */}
+      <a
+        href={p.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="media block overflow-hidden"
+        title={`Open ${p.title} live demo`}
+        aria-label={`Open ${p.title} live demo in a new tab`}
       >
         <LocalPreviewImage
           folderName={p.folderName}
           title={p.title}
           alt={`${p.title} preview`}
         />
-
-        {/* Hover CTA — opens modal */}
-        <span className="card-cta card-cta--preview" aria-hidden="true">
-          <Play size={13} style={{ fill: "currentColor" }} />
-          Preview Demo
-        </span>
-      </div>
+      </a>
 
       <div className="flex flex-col p-4 pt-3.5 pb-4">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-display text-[16px] font-bold text-snow leading-tight">{p.title}</h3>
-          {/* Open in new tab */}
+          {/* Open model button */}
           <a
             href={p.liveUrl}
             target="_blank"
@@ -76,7 +68,6 @@ function Card({
             className="card-arrow flex-none"
             title={`Open ${p.title} in new tab`}
             aria-label={`Open ${p.title} live demo in a new tab`}
-            onClick={(e) => e.stopPropagation()}
           >
             <ExternalLink size={14} />
           </a>
@@ -141,7 +132,7 @@ function ComingSoon({ category }: { category: FilterKey }) {
 }
 
 /* TanStack Virtual row windowing for large catalogs */
-function VirtualGrid({ items, onPreview }: { items: Project[]; onPreview: (p: Project) => void }) {
+function VirtualGrid({ items }: { items: Project[] }) {
   const rows = useMemo(() => {
     const out: Project[][] = [];
     for (let i = 0; i < items.length; i += COLS) out.push(items.slice(i, i + COLS));
@@ -166,7 +157,7 @@ function VirtualGrid({ items, onPreview }: { items: Project[]; onPreview: (p: Pr
           style={{ top: 0, transform: `translateY(${vr.start}px)` }}
         >
           {rows[vr.index].map((p) => (
-            <Card key={p.id} p={p} onPreview={onPreview} />
+            <Card key={p.id} p={p} />
           ))}
         </div>
       ))}
@@ -174,12 +165,7 @@ function VirtualGrid({ items, onPreview }: { items: Project[]; onPreview: (p: Pr
   );
 }
 
-interface FeaturedWorkProps {
-  /** Called when the user clicks "Preview Demo" on a card */
-  onPreview: (project: Project) => void;
-}
-
-export default function FeaturedWork({ onPreview }: FeaturedWorkProps) {
+export default function FeaturedWork() {
   const all = useProjects();
   const [filter, setFilter] = useState<FilterKey>("All");
   const [page, setPage] = useState(0);
@@ -252,7 +238,7 @@ export default function FeaturedWork({ onPreview }: FeaturedWorkProps) {
           {!populated ? (
             <ComingSoon category={filter} />
           ) : virtualized ? (
-            <VirtualGrid items={filtered} onPreview={onPreview} />
+            <VirtualGrid items={filtered} />
           ) : (
             <>
               <div
@@ -265,7 +251,6 @@ export default function FeaturedWork({ onPreview }: FeaturedWorkProps) {
                     p={p}
                     leaving={leaving}
                     enterIndex={leaving ? undefined : i}
-                    onPreview={onPreview}
                   />
                 ))}
               </div>
