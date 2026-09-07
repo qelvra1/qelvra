@@ -15,16 +15,17 @@ export default function LocalPreviewImage({
 }: LocalPreviewImageProps) {
   const modelKey = folderName as DemoModelKey;
   const model = DEMO_MODELS[modelKey];
-  const src = model ? model.preview : "/placeholder.webp";
+  const resolvedPreview = model ? model.preview : `/demos/${folderName}/${folderName}.webp`;
 
   return (
     <img
-      src={src}
+      src={resolvedPreview}
       alt={alt || `${title || folderName} preview`}
       className={className}
       loading="lazy"
       decoding="async"
       onError={(e) => {
+        e.currentTarget.onerror = null;
         e.currentTarget.src = "/placeholder.webp";
       }}
     />

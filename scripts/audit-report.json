@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-07T12:48:05.588Z",
+  "timestamp": "2026-09-07T13:16:17.782Z",
   "dryRun": true,
   "folders": [
     {
@@ -30,7 +30,9 @@
       "absolutePathsFound": 0,
       "absolutePathsFixed": 0,
       "filesPatched": [],
-      "issues": []
+      "issues": [
+        "NO_BUNDLES"
+      ]
     },
     {
       "folder": "lumiere-haven",
@@ -70,7 +72,9 @@
       "absolutePathsFound": 0,
       "absolutePathsFixed": 0,
       "filesPatched": [],
-      "issues": []
+      "issues": [
+        "NO_BUNDLES"
+      ]
     },
     {
       "folder": "peak-performannce",

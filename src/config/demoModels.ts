@@ -4,6 +4,19 @@
  * Single source of truth for all demo models.
  * Every path is root-absolute and points directly into public/demos/<modelName>/
  */
+
+export const SUPPORTED_ASSET_EXTENSIONS = [
+  "webp", "png", "jpg", "jpeg", "gif", "svg", "avif", "ico", "bmp", "tiff",
+  "js", "mjs", "css", "json", "xml",
+  "woff", "woff2", "ttf", "otf", "eot",
+  "mp4", "webm", "mp3", "wav",
+  "glb", "gltf", "bin", "wasm"
+] as const;
+
+export const PREVIEW_EXTENSIONS = [
+  "webp", "png", "jpg", "jpeg", "avif", "gif", "svg"
+] as const;
+
 export interface DemoModelEntry {
   readonly preview: string;
   readonly entry: string;
