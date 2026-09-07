@@ -27,6 +27,7 @@ export function LogoImage({
       className={`w-auto object-contain transition-opacity hover:opacity-90 ${className}`}
       loading="eager"
       decoding="async"
+      onError={(e) => console.error("Failed to load asset:", e.currentTarget.src)}
     />
   );
 }

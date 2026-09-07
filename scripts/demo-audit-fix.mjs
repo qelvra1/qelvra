@@ -30,7 +30,8 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const DEMOS_DIR = join(ROOT, "public", "assets", "demos");
+const DEMOS_DIR_PRIMARY = join(ROOT, "public", "demos");
+const DEMOS_DIR = existsSync(DEMOS_DIR_PRIMARY) ? DEMOS_DIR_PRIMARY : join(ROOT, "public", "assets", "demos");
 const REPORT_OUT = join(__dirname, "audit-report.json");
 
 const DEMO_FOLDERS = [

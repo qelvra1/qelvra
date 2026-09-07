@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Play } from "lucide-react";
 import type { FilterKey, Project } from "../data";
 import { useProjects } from "../data/projectsStore";
 import { scrollToId } from "../lib/motion";
@@ -29,10 +29,12 @@ function Card({
   p,
   enterIndex,
   leaving,
+  onPreview,
 }: {
   p: Project;
   enterIndex?: number;
   leaving?: boolean;
+  onPreview: (project: Project) => void;
 }) {
   return (
     <article
@@ -41,28 +43,44 @@ function Card({
       }`}
       style={enterIndex !== undefined ? { animationDelay: `${enterIndex * 70}ms` } : undefined}
     >
-      {/* Whole thumbnail opens this model's own compiled build — never the
-          landing page, never embedded */}
-      <a
+      {/* Thumbnail — clicking opens the in-page preview modal */}
+      <div
         className="media"
-        href={p.liveUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Open ${p.title} live demo in a new tab`}
+        role="button"
+        tabIndex={0}
+        aria-label={`Preview ${p.title}`}
+        onClick={() => onPreview(p)}
+        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onPreview(p)}
       >
         <LocalPreviewImage
           folderName={p.folderName}
           title={p.title}
           alt={`${p.title} preview`}
         />
-        <span className="card-cta">
-          Open Live Demo
-          <ExternalLink size={15} />
+
+        {/* Hover CTA — opens modal */}
+        <span className="card-cta card-cta--preview" aria-hidden="true">
+          <Play size={13} style={{ fill: "currentColor" }} />
+          Preview Demo
         </span>
-      </a>
+      </div>
 
       <div className="flex flex-col p-4 pt-3.5 pb-4">
-        <h3 className="font-display text-[16px] font-bold text-snow">{p.title}</h3>
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-display text-[16px] font-bold text-snow leading-tight">{p.title}</h3>
+          {/* Open in new tab */}
+          <a
+            href={p.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-arrow flex-none"
+            title={`Open ${p.title} in new tab`}
+            aria-label={`Open ${p.title} live demo in a new tab`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ExternalLink size={14} />
+          </a>
+        </div>
         <p className="mt-1.5 text-[13px] leading-snug text-fog line-clamp-2">{p.description}</p>
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {p.tags.map((t) => (
@@ -123,7 +141,7 @@ function ComingSoon({ category }: { category: FilterKey }) {
 }
 
 /* TanStack Virtual row windowing for large catalogs */
-function VirtualGrid({ items }: { items: Project[] }) {
+function VirtualGrid({ items, onPreview }: { items: Project[]; onPreview: (p: Project) => void }) {
   const rows = useMemo(() => {
     const out: Project[][] = [];
     for (let i = 0; i < items.length; i += COLS) out.push(items.slice(i, i + COLS));
@@ -148,7 +166,7 @@ function VirtualGrid({ items }: { items: Project[] }) {
           style={{ top: 0, transform: `translateY(${vr.start}px)` }}
         >
           {rows[vr.index].map((p) => (
-            <Card key={p.id} p={p} />
+            <Card key={p.id} p={p} onPreview={onPreview} />
           ))}
         </div>
       ))}
@@ -156,7 +174,12 @@ function VirtualGrid({ items }: { items: Project[] }) {
   );
 }
 
-export default function FeaturedWork() {
+interface FeaturedWorkProps {
+  /** Called when the user clicks "Preview Demo" on a card */
+  onPreview: (project: Project) => void;
+}
+
+export default function FeaturedWork({ onPreview }: FeaturedWorkProps) {
   const all = useProjects();
   const [filter, setFilter] = useState<FilterKey>("All");
   const [page, setPage] = useState(0);
@@ -229,7 +252,7 @@ export default function FeaturedWork() {
           {!populated ? (
             <ComingSoon category={filter} />
           ) : virtualized ? (
-            <VirtualGrid items={filtered} />
+            <VirtualGrid items={filtered} onPreview={onPreview} />
           ) : (
             <>
               <div
@@ -242,6 +265,7 @@ export default function FeaturedWork() {
                     p={p}
                     leaving={leaving}
                     enterIndex={leaving ? undefined : i}
+                    onPreview={onPreview}
                   />
                 ))}
               </div>

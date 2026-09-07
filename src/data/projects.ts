@@ -1,7 +1,7 @@
-/* Centralized Selected Works catalog — powered by PROJECTS_CONFIG */
+/* Centralized Selected Works catalog — powered by PROJECTS_CONFIG & DEMO_MODELS */
 
 import { PROJECTS_CONFIG, type ProjectConfigItem } from "./projectsConfig";
-import { demoIndexUrl } from "../assets";
+import { DEMO_MODELS, type DemoModelKey } from "../config/demoModels";
 
 export type Category = string;
 export type FilterKey = "All" | Category;
@@ -10,18 +10,22 @@ export interface Project extends ProjectConfigItem {
   displayName: string;
   image: string;
   liveUrl: string;
+  assetBaseDir: string;
 }
 
 export { PROJECTS_CONFIG, type ProjectConfigItem };
 
-export const PROJECTS: Project[] = PROJECTS_CONFIG.map((item) => ({
-  ...item,
-  displayName: item.title,
-  image: `./assets/demos/${encodeURIComponent(item.folderName)}/${encodeURIComponent(
-    item.folderName
-  )}.webp`,
-  liveUrl: demoIndexUrl(item.folderName),
-}));
+export const PROJECTS: Project[] = PROJECTS_CONFIG.map((item) => {
+  const modelKey = item.folderName as DemoModelKey;
+  const modelConfig = DEMO_MODELS[modelKey];
+  return {
+    ...item,
+    displayName: item.title,
+    image: modelConfig ? modelConfig.preview : `/demos/${item.folderName}/${item.folderName}.webp`,
+    liveUrl: modelConfig ? modelConfig.entry : `/demos/${item.folderName}/index.html`,
+    assetBaseDir: modelConfig ? modelConfig.assetsDir : `/demos/${item.folderName}/assets/`,
+  };
+});
 
 export const FILTERS: FilterKey[] = [
   "All",

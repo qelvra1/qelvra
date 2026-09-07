@@ -38,7 +38,10 @@ export function HeroShowcaseImage() {
         className="w-full h-full object-contain bg-transparent filter drop-shadow-2xl"
         loading="eager"
         decoding="async"
-        onError={() => setExtIndex((prev) => prev + 1)}
+        onError={(e) => {
+          console.error("Failed to load asset:", e.currentTarget.src);
+          setExtIndex((prev) => prev + 1);
+        }}
       />
     </div>
   );
@@ -67,7 +70,10 @@ export function HeroPhoneImage() {
       className="w-full h-auto object-contain bg-transparent drop-shadow-2xl"
       loading="eager"
       decoding="async"
-      onError={() => setExtIndex((prev) => prev + 1)}
+      onError={(e) => {
+        console.error("Failed to load asset:", e.currentTarget.src);
+        setExtIndex((prev) => prev + 1);
+      }}
     />
   );
 }
