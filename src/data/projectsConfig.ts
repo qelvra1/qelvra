@@ -88,4 +88,28 @@ export const PROJECTS_CONFIG: ProjectConfigItem[] = [
     tags: ["Multi-vendor", "Escrow", "React"],
     description: "Multi-vendor marketplace with escrow payments and seller analytics.",
   },
+  {
+    id: "burger-chaos",
+    folderName: "burger-chaos",
+    title: "Burger Chaos",
+    category: "Websites",
+    tags: ["Food", "Ordering", "Animation"],
+    description: "Bold burger brand site with vibrant visuals and online ordering.",
+  },
+  {
+    id: "greenrush",
+    folderName: "greenrush",
+    title: "GreenRush",
+    category: "Websites",
+    tags: ["Sustainability", "E-commerce", "Green"],
+    description: "Eco-conscious marketplace connecting sustainable brands with conscious shoppers.",
+  },
+  {
+    id: "starbucks",
+    folderName: "starbucks",
+    title: "Starbucks",
+    category: "Websites",
+    tags: ["Brand", "Menu", "Loyalty"],
+    description: "Immersive Starbucks experience with menu exploration and rewards integration.",
+  },
 ];

@@ -69,6 +69,21 @@ export const DEMO_MODELS = {
     entry: "/demos/nexora/index.html",
     assetsDir: "/demos/nexora/assets/",
   },
+  "burger-chaos": {
+    preview: "/demos/burger-chaos/burger-chaos.webp",
+    entry: "/demos/burger-chaos/index.html",
+    assetsDir: "/demos/burger-chaos/assets/",
+  },
+  greenrush: {
+    preview: "/demos/greenrush/greenrush.webp",
+    entry: "/demos/greenrush/index.html",
+    assetsDir: "/demos/greenrush/assets/",
+  },
+  starbucks: {
+    preview: "/demos/starbucks/starbucks.webp",
+    entry: "/demos/starbucks/index.html",
+    assetsDir: "/demos/starbucks/assets/",
+  },
 } as const;
 
 export type DemoModelKey = keyof typeof DEMO_MODELS;
