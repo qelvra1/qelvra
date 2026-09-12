@@ -6,7 +6,7 @@
  * Resize strategy: fit "cover" + crop top so the full 1200×750 frame is filled.
  */
 import sharp from "sharp";
-import { readdirSync, statSync } from "fs";
+import { readdirSync, statSync, existsSync, writeFileSync, readFileSync } from "fs";
 import { join, extname, basename } from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -14,7 +14,8 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const DEMOS_DIR = join(__dirname, "../public/assets/demos");
+const DEMOS_DIR_PRIMARY = join(__dirname, "../public/demos");
+const DEMOS_DIR = existsSync(DEMOS_DIR_PRIMARY) ? DEMOS_DIR_PRIMARY : join(__dirname, "../public/assets/demos");
 const TARGET_W = 1200;
 const TARGET_H = 750;
 const PREVIEW_EXTS = new Set([".webp", ".jpg", ".jpeg", ".png", ".avif"]);
@@ -35,7 +36,8 @@ async function main() {
 
     for (const file of files) {
       const filePath = join(folderPath, file);
-      const meta = await sharp(filePath).metadata();
+      const inputBuffer = readFileSync(filePath);
+      const meta = await sharp(inputBuffer).metadata();
       const originalW = meta.width || 0;
       const originalH = meta.height || 0;
 
@@ -47,7 +49,7 @@ async function main() {
       console.log(`  Resizing ${folder}/${file}  [${originalW}×${originalH}] → [${TARGET_W}×${TARGET_H}]`);
 
       const ext = extname(file).toLowerCase().replace(".", "");
-      const resized = sharp(filePath).resize(TARGET_W, TARGET_H, {
+      const resized = sharp(inputBuffer).resize(TARGET_W, TARGET_H, {
         fit: "cover",
         position: "top",
       });
@@ -65,7 +67,7 @@ async function main() {
         outputBuffer = await resized.toBuffer();
       }
 
-      await sharp(outputBuffer).toFile(filePath);
+      writeFileSync(filePath, outputBuffer);
       console.log(`    ✓ Saved (${(outputBuffer.length / 1024).toFixed(0)} KB)`);
     }
   }

@@ -45,7 +45,7 @@ export default function Footer() {
         </button>
 
         <p className="order-last text-center text-[13px] text-slate-500 md:order-none">
-          © 2027 QELVRA. All rights reserved.
+          © 2026 QELVRA. Web Design & Development Studio based in Morocco. All rights reserved.
         </p>
 
         <div className="flex items-center gap-3">

@@ -55,9 +55,9 @@ export default function Hero({ onContact }: HeroProps) {
             </span>
 
             <h1 className="headline mt-6 text-snow" data-reveal data-reveal-delay="0.08">
-              <span className="block">Digital Products</span>
+              <span className="block">Web Design & Development</span>
               <span className="block">
-                That <span className="text-gradient">Drive Results</span>
+                Studio in <span className="text-gradient">Morocco</span>
               </span>
             </h1>
 
@@ -66,14 +66,14 @@ export default function Hero({ onContact }: HeroProps) {
               data-reveal
               data-reveal-delay="0.16"
             >
-              I design and build modern digital experiences. Websites, Web Apps,
-              SaaS Platforms, Dashboards and Mobile Apps that help businesses
-              grow.
+              QELVRA is a Morocco-based web design and development studio. We create
+              high-performance websites, web applications, SaaS platforms and e-commerce
+              experiences for businesses in Morocco and worldwide.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4" data-reveal data-reveal-delay="0.24">
               <GradientCTA onClick={() => scrollToId("portfolio")}>
-                View My Work
+                View Selected Work
               </GradientCTA>
               <button className="btn btn-ghost" onClick={onContact}>
                 Let&apos;s Talk
@@ -83,7 +83,7 @@ export default function Hero({ onContact }: HeroProps) {
 
             <div className="mt-12" data-reveal data-reveal-delay="0.32">
               <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
-                Trusted by
+                Built with industry-standard technologies
               </p>
               <TrustedLogos />
             </div>

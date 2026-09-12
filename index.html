@@ -1,101 +1,351 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#00060E" />
+<head>
+  <!-- =========================================================
+       DOCUMENT & VIEWPORT
+       ========================================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00060E" />
+  <meta name="color-scheme" content="dark" />
 
-    <!-- Primary SEO -->
-    <title>QELVRA | Digital Products That Drive Results</title>
-    <meta
-      name="description"
-      content="QELVRA designs and builds websites, web apps, SaaS platforms, dashboards and mobile apps, premium digital products that help businesses grow."
-    />
-    <meta
-      name="keywords"
-      content="web design, web development, SaaS platforms, dashboards, mobile apps, portfolio, QELVRA"
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="QELVRA" />
-    <link rel="canonical" href="https://qelvra.dev/" />
+  <!-- =========================================================
+       PRIMARY SEO
+       ========================================================= -->
+  <title>QELVRA | Web Design & Development Studio in Morocco</title>
+  <meta name="description" content="QELVRA is a web design and development studio based in Morocco, creating high-performance websites, web apps, SaaS platforms and e-commerce experiences for businesses worldwide." />
+  <meta name="keywords" content="web design morocco, web development studio, custom web applications, saas platforms, e-commerce development, burger chaos fast food brand, greenrush healthy food eco-commerce, starbucks brewscape coffee experience, fast food online ordering, healthy food storefront, coffee loyalty program, barbershop booking system, car rental pwa, healthcare clinic portal, real estate virtual tours, fine dining website, multi vendor marketplace" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="QELVRA" />
+  <meta name="application-name" content="QELVRA" />
+  <link rel="canonical" href="https://qelvra.dev/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="QELVRA" />
-    <meta property="og:url" content="https://qelvra.dev/" />
-    <meta property="og:title" content="QELVRA | Digital Products That Drive Results" />
-    <meta
-      property="og:description"
-      content="Websites, web apps, SaaS platforms, dashboards and mobile apps, premium digital products that help businesses grow."
-    />
-    <meta property="og:image" content="./assets/logos/qelvra-logo.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="QELVRA brand mark" />
+  <!-- =========================================================
+       OPEN GRAPH
+       ========================================================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="QELVRA" />
+  <meta property="og:url" content="https://qelvra.dev/" />
+  <meta property="og:title" content="QELVRA | Web Design & Development Studio in Morocco" />
+  <meta property="og:description" content="Morocco-based web design and development studio creating high-performance websites, web apps, SaaS platforms and e-commerce experiences for businesses worldwide." />
+  <meta property="og:image" content="https://qelvra.dev/assets/logos/qelvra-og.png" />
+  <meta property="og:image:secure_url" content="https://qelvra.dev/assets/logos/qelvra-og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="QELVRA - Web Design and Development Studio in Morocco" />
+  <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="QELVRA | Digital Products That Drive Results" />
-    <meta
-      name="twitter:description"
-      content="Websites, web apps, SaaS platforms, dashboards and mobile apps, premium digital products that help businesses grow."
-    />
-    <meta name="twitter:image" content="./assets/logos/qelvra-logo.png" />
+  <!-- =========================================================
+       X / TWITTER
+       ========================================================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="QELVRA | Web Design & Development Studio in Morocco" />
+  <meta name="twitter:description" content="QELVRA is a Morocco-based digital studio creating websites, web apps, SaaS platforms and e-commerce experiences for businesses worldwide." />
+  <meta name="twitter:image" content="https://qelvra.dev/assets/logos/qelvra-og.png" />
+  <meta name="twitter:image:alt" content="QELVRA - Web Design and Development Studio" />
 
-    <!-- Structured data: WebSite + ProfessionalService -->
-    <script type="application/ld+json">
+  <!-- =========================================================
+       FAVICONS
+       ========================================================= -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+  <!-- =========================================================
+       PERFORMANCE / FONTS PRECONNECT
+       ========================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- =========================================================
+       STRUCTURED DATA (JSON-LD) — Organization, WebSite, WebPage, Services & ItemList
+       ========================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@context": "https://schema.org",
-        "@graph": [
+        "@type": "Organization",
+        "@id": "https://qelvra.dev/#organization",
+        "name": "QELVRA",
+        "alternateName": "QELVRA Studio",
+        "url": "https://qelvra.dev/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://qelvra.dev/assets/logos/qelvra-logo.png",
+          "width": 400,
+          "height": 400
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://qelvra.dev/assets/logos/qelvra-og.png",
+          "width": 1200,
+          "height": 630
+        },
+        "description": "QELVRA is a web design and development studio based in Morocco, creating high-performance websites, web applications, SaaS platforms and e-commerce experiences for businesses worldwide.",
+        "slogan": "Digital products that drive results.",
+        "foundingDate": "2026",
+        "areaServed": [
+          { "@type": "Country", "name": "Morocco" },
+          { "@type": "Country", "name": "France" },
+          { "@type": "Country", "name": "United Kingdom" },
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "Canada" },
+          { "@type": "Country", "name": "Australia" }
+        ],
+        "knowsAbout": [
+          "Web Design",
+          "Web Development",
+          "UI/UX Design",
+          "Frontend Development",
+          "Web Application Development",
+          "SaaS Development",
+          "E-commerce Development",
+          "Responsive Web Design",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Digital Product Design",
+          "Conversion-focused Web Design"
+        ],
+        "sameAs": [
+          "https://linkedin.com/company/qelvra",
+          "https://instagram.com/qelvra",
+          "https://github.com/qelvra"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://qelvra.dev/#website",
+        "url": "https://qelvra.dev/",
+        "name": "QELVRA",
+        "description": "QELVRA is a web design and development studio based in Morocco serving businesses worldwide.",
+        "publisher": { "@id": "https://qelvra.dev/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://qelvra.dev/#webpage",
+        "url": "https://qelvra.dev/",
+        "name": "QELVRA | Web Design & Development Studio in Morocco",
+        "description": "QELVRA is a Morocco-based web design and development studio creating high-performance websites, web applications, SaaS platforms and e-commerce experiences for businesses worldwide.",
+        "isPartOf": { "@id": "https://qelvra.dev/#website" },
+        "about": { "@id": "https://qelvra.dev/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://qelvra.dev/assets/logos/qelvra-og.png",
+          "width": 1200,
+          "height": 630
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://qelvra.dev/#web-design-development",
+        "name": "Web Design & Development",
+        "provider": { "@id": "https://qelvra.dev/#organization" },
+        "serviceType": "Web Design and Development",
+        "description": "Custom high-performance websites designed and developed for businesses and brands.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://qelvra.dev/#web-app-development",
+        "name": "Web Application Development",
+        "provider": { "@id": "https://qelvra.dev/#organization" },
+        "serviceType": "Web Application Development",
+        "description": "Custom interactive web applications and digital products built around business requirements and user experience.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://qelvra.dev/#saas-development",
+        "name": "SaaS Development",
+        "provider": { "@id": "https://qelvra.dev/#organization" },
+        "serviceType": "SaaS Development",
+        "description": "Design and development of SaaS products, business platforms and dashboards.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://qelvra.dev/#ecommerce-development",
+        "name": "E-commerce Development",
+        "provider": { "@id": "https://qelvra.dev/#organization" },
+        "serviceType": "E-commerce Development",
+        "description": "High-performance e-commerce websites and digital storefronts designed for usability, conversion and growth.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://qelvra.dev/#ui-ux-design",
+        "name": "UI/UX Design",
+        "provider": { "@id": "https://qelvra.dev/#organization" },
+        "serviceType": "UI/UX Design",
+        "description": "Modern user interface and user experience design for websites, web applications and digital products.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://qelvra.dev/#portfolio",
+        "name": "QELVRA Selected Work",
+        "description": "Selected website and digital product concepts created by QELVRA.",
+        "itemListElement": [
           {
-            "@type": "WebSite",
-            "@id": "https://qelvra.dev/#website",
-            "url": "https://qelvra.dev/",
-            "name": "QELVRA",
-            "description": "Digital products that drive results: websites, web apps, SaaS platforms, dashboards and mobile apps.",
-            "inLanguage": "en"
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "OAK & BLADE Barbering Atelier",
+              "url": "https://qelvra.dev/demos/oak-blade/",
+              "image": "https://qelvra.dev/demos/oak-blade/oak-blade.webp",
+              "description": "Premium barbershop website concept focused on brand identity, services and booking experience."
+            }
           },
           {
-            "@type": "ProfessionalService",
-            "@id": "https://qelvra.dev/#organization",
-            "name": "QELVRA",
-            "url": "https://qelvra.dev/",
-            "logo": "https://qelvra.dev/assets/logos/qelvra-logo.png",
-            "description": "Design and development studio for websites, web apps, SaaS platforms, dashboards and mobile apps.",
-            "areaServed": "Worldwide",
-            "sameAs": [
-              "https://linkedin.com",
-              "https://twitter.com",
-              "https://instagram.com",
-              "https://facebook.com"
-            ],
-            "makesOffer": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Platform Engineering" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboard & Analytics Builds" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } }
-            ]
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Velocity Rental Car",
+              "url": "https://qelvra.dev/demos/velocity/",
+              "image": "https://qelvra.dev/demos/velocity/velocity.webp",
+              "description": "Modern car rental website concept focused on vehicle discovery, availability and booking."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "CrispyLand Fast Food",
+              "url": "https://qelvra.dev/demos/cripsyland/",
+              "image": "https://qelvra.dev/demos/cripsyland/cripsyland.webp",
+              "description": "Fast-food website concept focused on digital menus, product discovery and online ordering."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Medicare Health Clinic",
+              "url": "https://qelvra.dev/demos/medicare/",
+              "image": "https://qelvra.dev/demos/medicare/medicare.webp",
+              "description": "Healthcare website concept focused on services, specialists and appointment discovery."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Peak Performance Fitness",
+              "url": "https://qelvra.dev/demos/peak-performannce/",
+              "image": "https://qelvra.dev/demos/peak-performannce/peak-performannce.webp",
+              "description": "Fitness website concept focused on classes, training services and user engagement."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Lumière Haven Hotel & Resort",
+              "url": "https://qelvra.dev/demos/lumiere-haven/",
+              "image": "https://qelvra.dev/demos/lumiere-haven/lumiere-haven.webp",
+              "description": "Luxury hospitality website concept focused on rooms, experiences and reservations."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "ARCHETYPE Private Estates",
+              "url": "https://qelvra.dev/demos/archetype/",
+              "image": "https://qelvra.dev/demos/archetype/archetype.webp",
+              "description": "Luxury real estate website concept focused on premium property discovery and presentation."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "AURELIA Fine Dining",
+              "url": "https://qelvra.dev/demos/aurelia/",
+              "image": "https://qelvra.dev/demos/aurelia/aurelia.webp",
+              "description": "Fine dining website concept focused on menu presentation, reservations and hospitality."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "NEXORA Marketplace",
+              "url": "https://qelvra.dev/demos/nexora/",
+              "image": "https://qelvra.dev/demos/nexora/nexora.webp",
+              "description": "Marketplace website concept focused on product discovery and multi-vendor experiences."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Burger Chaos",
+              "url": "https://qelvra.dev/demos/burger-chaos/",
+              "image": "https://qelvra.dev/demos/burger-chaos/burger-chaos.webp",
+              "description": "Fast food brand website concept with vibrant motion design and digital menu ordering."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "GreenRush Healthy Food",
+              "url": "https://qelvra.dev/demos/greenrush/",
+              "image": "https://qelvra.dev/demos/greenrush/greenrush.webp",
+              "description": "Eco-conscious healthy food storefront concept connecting sustainable farms with consumers."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Starbucks BREWSCAPE",
+              "url": "https://qelvra.dev/demos/starbucks/",
+              "image": "https://qelvra.dev/demos/starbucks/starbucks.webp",
+              "description": "Immersive coffee brand concept with seasonal menu explorer, loyalty rewards and brand storytelling."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Food Lover",
+              "url": "https://qelvra.dev/demos/food-lover/",
+              "image": "https://qelvra.dev/demos/food-lover/food-lover.webp",
+              "description": "Fresh food and bistro website concept featuring handcrafted burgers, signature pasta, and table reservations."
+            }
           }
         ]
       }
-    </script>
-
-    <!-- Favicon & Brand Asset Mappings from /assets/favicons/ -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png" />
-    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png" />
-    <link rel="manifest" href="./assets/favicons/site.webmanifest" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

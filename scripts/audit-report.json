@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-09-07T13:16:17.782Z",
-  "dryRun": true,
+  "timestamp": "2026-09-12T19:59:38.474Z",
+  "dryRun": false,
   "folders": [
     {
       "folder": "archetype",
@@ -23,6 +23,16 @@
       "issues": []
     },
     {
+      "folder": "burger-chaos",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "burger-chaos.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
       "folder": "cripsyland",
       "exists": true,
       "indexHtml": true,
@@ -33,6 +43,34 @@
       "issues": [
         "NO_BUNDLES"
       ]
+    },
+    {
+      "folder": "food-lover",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "food-lover.webp",
+      "absolutePathsFound": 5,
+      "absolutePathsFixed": 5,
+      "filesPatched": [
+        "index.html"
+      ],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "greenrush",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "greenrush.webp",
+      "absolutePathsFound": 27,
+      "absolutePathsFixed": 27,
+      "filesPatched": [
+        "index.html",
+        "greenrush/assets/index-B4abLG1P.css",
+        "greenrush/assets/index-D54a8W8O.js"
+      ],
+      "issues": []
     },
     {
       "folder": "lumiere-haven",
@@ -85,6 +123,18 @@
       "absolutePathsFixed": 0,
       "filesPatched": [],
       "issues": []
+    },
+    {
+      "folder": "starbucks",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "starbucks.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
     },
     {
       "folder": "velocity",

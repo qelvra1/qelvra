@@ -53,7 +53,7 @@ function Card({
         <LocalPreviewImage
           folderName={p.folderName}
           title={p.title}
-          alt={`${p.title} preview`}
+          alt={`${p.title} — ${p.niche} website preview`}
         />
       </a>
 

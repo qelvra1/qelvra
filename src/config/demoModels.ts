@@ -84,6 +84,11 @@ export const DEMO_MODELS = {
     entry: "/demos/starbucks/index.html",
     assetsDir: "/demos/starbucks/assets/",
   },
+  "food-lover": {
+    preview: "/demos/food-lover/food-lover.webp",
+    entry: "/demos/food-lover/index.html",
+    assetsDir: "/demos/food-lover/assets/",
+  },
 } as const;
 
 export type DemoModelKey = keyof typeof DEMO_MODELS;

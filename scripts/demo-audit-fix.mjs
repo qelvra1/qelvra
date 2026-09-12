@@ -37,12 +37,16 @@ const REPORT_OUT = join(__dirname, "audit-report.json");
 const DEMO_FOLDERS = [
   "archetype",
   "aurelia",
+  "burger-chaos",
   "cripsyland",
+  "food-lover",
+  "greenrush",
   "lumiere-haven",
   "medicare",
   "nexora",
   "oak-blade",
   "peak-performannce",
+  "starbucks",
   "velocity",
 ];
 

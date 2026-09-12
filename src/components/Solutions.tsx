@@ -58,21 +58,20 @@ export default function Solutions() {
           <div data-reveal>
             <span className="q-badge">
               <span className="dot violet" />
-              Why Work With Me
+              Services & Capabilities
             </span>
             <h2 className="font-display mt-5 text-[clamp(1.9rem,4vw,2.9rem)] font-bold leading-[1.12] tracking-tight text-snow">
-              <span className="block">Modern Solutions</span>
+              <span className="block">Modern Web Solutions</span>
               <span className="block">
-                Built for the <span className="text-gradient">Future</span>
+                Built for <span className="text-gradient">Growth</span>
               </span>
             </h2>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-fog">
-              I combine design, development and strategy to deliver products
-              that are not only beautiful, but also functional, scalable and
-              impactful.
+              We combine design, frontend engineering and performance strategy to deliver
+              custom websites, SaaS platforms and digital products built to scale.
             </p>
             <button className="btn btn-ghost mt-8" onClick={() => scrollToId("contact")}>
-              About Me
+              Discuss Your Project
               <UserRound size={16} />
             </button>
           </div>
