@@ -1,0 +1,14 @@
+{
+  "name": "BrewHaven Cafe",
+  "short_name": "BrewHaven",
+  "description": "Better Coffee. Brighter Days. Exceptional coffee, fresh pastries, and a welcoming space.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F5EFE6",
+  "theme_color": "#F5EFE6",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

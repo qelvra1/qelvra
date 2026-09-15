@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-09-15T23:42:30.261Z",
+  "dryRun": false,
+  "folders": [
+    {
+      "folder": "archetype",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "archetype.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "aurelia",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "aurelia.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "brewhaven-cafe",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "brewhaven-cafe.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "burger-chaos",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "burger-chaos.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "cripsyland",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "cripsyland.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "food-lover",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "food-lover.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "greenrush",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "greenrush.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "lumiere-haven",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "lumiere-haven.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "medicare",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "medicare.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "nexora",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "nexora.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "oak-blade",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "oak-blade.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "peak-performannce",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "peak-performannce.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    },
+    {
+      "folder": "pour-coffee",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "pour-coffee.webp",
+      "absolutePathsFound": 6,
+      "absolutePathsFixed": 6,
+      "filesPatched": [
+        "index.html"
+      ],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "starbucks",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "starbucks.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": [
+        "NO_BUNDLES"
+      ]
+    },
+    {
+      "folder": "velocity",
+      "exists": true,
+      "indexHtml": true,
+      "preview": "velocity.webp",
+      "absolutePathsFound": 0,
+      "absolutePathsFixed": 0,
+      "filesPatched": [],
+      "issues": []
+    }
+  ]
+}

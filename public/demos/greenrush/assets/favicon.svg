@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76c828" />
+      <stop offset="100%" stop-color="#467c19" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c2c2c" />
+      <stop offset="100%" stop-color="#191919" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <g filter="url(#shadow)">
+    <!-- Stylized GreenRush G Leaf Emblem -->
+    <path d="M 340,130 C 220,130 140,210 140,330 C 140,390 180,410 240,410 C 330,410 370,330 370,250 C 370,240 360,230 350,230 L 260,230 C 250,230 240,240 240,250 C 240,260 250,270 260,270 L 325,270 C 320,320 290,370 240,370 C 200,370 180,340 180,310 C 180,220 240,170 330,170 C 345,170 355,160 355,145 C 355,135 348,130 340,130 Z" fill="url(#leafGrad)" />
+    <!-- Leaf vein accent -->
+    <path d="M 200,340 C 230,280 300,210 350,150" stroke="#8ae333" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.8" />
+    <!-- Red dot accent -->
+    <circle cx="380" cy="140" r="28" fill="#ed2027" />
+  </g>
+</svg>
