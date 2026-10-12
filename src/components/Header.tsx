@@ -27,7 +27,7 @@ const CONTACT_ACTIONS = [
   {
     key: "email",
     label: "Email",
-    href: "mailto:morli442121@gmail.com",
+    href: "mailto:qelvra.labs@gmail.com",
     external: false,
     tint: "mail",
     icon: <Mail size={20} />,
